@@ -19,10 +19,10 @@ comm.Bcast([N, MPI.INT], root=0)
 #  con el método de Monte Carlo.
 h = 1.0 / N; s = 0.0
 for i in range(rank, N, size):
-    print(rank, N, size, i)
+    # print(rank, N, size, i)
     x = h * (i + 0.5)
     s += 4.0 / (1.0 + x**2)
-    print(x, h, s)
+    # print(x, h, s)
 
 # Reduce los valores de PI calculados por cada proceso
 PI = numpy.array(s * h, dtype='float64')
